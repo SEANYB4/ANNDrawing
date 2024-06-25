@@ -45,7 +45,7 @@ class NetworkVisualizer(tk.Tk):
             x = (layer_index + 1) * x_spacing
             for node_index in range(layer_size):
                 y = (node_index + 1) * y_spacing
-                self.canvas.create_oval(x - 20, y - 20, x + 20, y + 20, fill="sky blue")
+                self.canvas.create_oval(x - 2, y - 2, x + 2, y + 2, fill="sky blue")
                 node_positions[(layer_index, node_index)] = (x, y)
 
 
@@ -59,7 +59,7 @@ class NetworkVisualizer(tk.Tk):
 
 
 def main():
-    nn = NeuralNetwork(4, 5, 3)
+    nn = NeuralNetwork(4, 64, 5)
     app = NetworkVisualizer(nn)
     app.mainloop()
 
@@ -67,4 +67,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-    
